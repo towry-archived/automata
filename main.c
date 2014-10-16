@@ -34,5 +34,7 @@ int main()
 		printf("rejected: %s\n", another_input);
 	}
 
+	table_destroy(&table);
+
 	return(0);
 }

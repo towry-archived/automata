@@ -12,7 +12,7 @@
 
 #define xmalloc(type) (type*)malloc(sizeof(type))
 #define xcalloc(n, type) (type*)calloc(n, sizeof(type))
-#define xfree(p) p != NULL && free(p)
+#define xfree(p) free(p)
 
 typedef struct table_s table_t;
 typedef struct transition_s transition_t;
@@ -34,5 +34,6 @@ struct transition_s
 };
 
 void table_init(table_t *);
+void table_destroy(table_t *);
 void table_construct(table_t *, const char *);
 #endif

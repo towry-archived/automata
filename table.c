@@ -28,6 +28,15 @@ void table_init(table_t *t)
 	t->state_start = 0;
 }
 
+void table_destroy(table_t *t)
+{
+	int i;
+	for (i = 0; i < t->num; i++) {
+		xfree(t->trans_ary[i]);
+	}
+	xfree(t->trans_ary);
+}
+
 void table_construct(table_t *t, const char *input)
 {
 	assert(t != NULL);
